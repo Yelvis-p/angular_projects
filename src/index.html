@@ -1,1 +1,33 @@
-<my-app>loading</my-app>
+<!DOCTYPE html>
+<html>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+<body>
+
+<div ng-app="User_List" ng-controller="Form" align ="center">
+  <table>
+    <tr>
+      <td>
+      Name: <input type ="text" ng-model="Fname">
+      Password:<input type ="Password" ng-model="Pass">
+      <button ng-click="ADD()" name="Add" >ADD</button>
+      </td>
+    </tr>
+  </table>
+  <p ng-repeat ="x in names">{{x}}</p>
+<script>
+  var app = app.module("User_List",[]);
+  app.controller("Form",function($scope)
+  {
+    $scope.names = ["Yelvis"];
+    $scope.Passes = ["11234"];
+    $scope.ADD = function($scope)
+    {
+$scope.names.push($scope.Fname);
+$scope.Passes.push($scope.Pass);
+    }
+  });
+
+
+</div>
+</body>
+</html>
